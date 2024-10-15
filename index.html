@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>010-Air Law Practice</title>
+  <link rel="apple-touch-icon" href="path-to-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 id="quiz-title">010-Air Law Practice</h2>
+  <div class="quiz-container">
+    <div id="quiz">
+      <div id="question-container" class="hide">
+          <!--  <div id="timer">Time Left: <span id="time">10</span> seconds</div>-->
+          <div id="progress-container" style="width: 100%; background-color: #ddd; height: 10px; margin-top: 10px;">
+            <div id="progress-bar" style="width: 0%; background-color: cyan; height: 100%;"></div>
+          </div>
+          <p id="progress-text">Question 1 of X</p>
+        <div id="question">Question text</div>
+        <div id="answer-buttons" class="btn-container"></div>
+      </div>
+      <div class="controls">
+        <button id="start-btn" class="start-btn btn">010-Air Law Practice</button>
+        <div id="password-container" class="hide">
+          <input type="password" id="quiz-password" placeholder="Enter password" />
+          <select id="num-questions">
+              <option value="3">3 Questions</option>
+              <option value="10">10 Questions</option>
+              <option value="25">25 Questions</option>
+              <option value="50">50 Questions</option>
+              <option value="100">100 Questions</option>
+              <option value="all">All Questions</option>
+            </select>
+          <button id="submit-password-btn" class="btn">Submit Password</button>
+        </div>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+      </div>
+    </div>
+
+    <div id="score-container" class="hide">
+        <h2 id="results-title">RESULTS</h2> <!-- Add results heading -->
+      <div id="student-info">
+        <input type="text" id="student-name" placeholder="Enter your name" />
+        <input type="text" id="student-surname" placeholder="Enter your surname" />
+      </div>
+      <div id="score"></div> <!-- Placeholder for score -->
+      <button id="save-btn" class="btn">Save Results</button>
+      <button id="send-btn" class="btn">Send Results</button>
+      <button id="restart-btn" class="btn">Restart Quiz</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

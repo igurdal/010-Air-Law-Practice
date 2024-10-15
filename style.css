@@ -1,0 +1,282 @@
+body {
+    /*
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+  overflow-y: scroll; /* Ensure the page scrolls if necessary */
+/*  margin: 0;
+  padding: 0;
+  padding-top: env(safe-area-inset-top); /* Adds padding for the notch area */
+ /* padding-bottom: env(safe-area-inset-bottom); /* Adds padding for the bottom */
+/*  overflow-x: hidden; /* Prevent horizontal scrolling */
+font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+#quiz-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px; /* Space between title and container */
+  color: #333; /* Darker color for contrast */
+}
+#results-title {
+  text-align: center; /* Center the results heading */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px; /* Add space below the heading */
+  color: #333;
+}
+
+.quiz-container {
+    width: 90%; /* Use a percentage for flexibility */
+    max-width: 600px; /* Set a maximum width for larger screens */
+    background-color: moccasin;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Add padding inside the container */
+    /*   margin: 10px auto; /* Add margin to create space between container and screen edges */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+    text-align: center;
+}
+#student-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Add space below the input fields */
+}
+
+#student-name,
+#student-surname {
+  width: 48%; /* Ensure both fields take up equal width */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0; /* Space between buttons */
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+    background-color: whitesmoke;
+      color: black;
+      border: 1px solid black;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      width: 100%; /* Ensure buttons take the full width but respect the container's padding */
+      box-sizing: border-box; /* Include padding and border in the element's width and height */
+
+}
+
+.btn:hover {
+  background-color: lightgray; /* Darker blue (used for visited links) */
+}
+
+.start-btn {
+  display: block;
+  margin: 0 auto; /* Centers the button horizontally */
+  background-color: lightblue;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center; /* Ensures text is centered */
+}
+
+.hide {
+  display: none;
+}
+
+.correct {
+  background-color: lightgreen;
+  color: white;
+}
+
+.wrong {
+  background-color: lightcoral;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+#timer {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.selected {
+  background-color: #f0ad4e; /* Highlight color (orange) */
+  color: white;
+  border-radius: 5px;
+}
+
+#progress-container {
+  width: 100%;
+  background-color: #e0e0e0; /* Light grey background for the progress bar */
+  height: 5px; /* Thinner progress bar */
+  margin-top: 10px; /* Space between timer and progress bar */
+  border-radius: 5px;
+}
+
+#progress-bar {
+  width: 0%; /* Initially set to 0% */
+  background-color: cyan; /* Cyan color for the progress bar */
+  height: 100%; /* Ensure the progress bar takes up the full height */
+  border-radius: 5px;
+}
+#quiz-password {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#progress-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#score-container {
+  max-height: 600px; /* Set a maximum height based on your design */
+  overflow-y: auto; /* Allow vertical scrolling */
+  padding: 10px; /* Add some padding for a neat look */
+  margin-top: 20px; /* Add space between elements */
+  text-align: center;
+}
+#submit-password-btn {
+  background-color: lightblue;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid black;;
+  border-radius: 5px; /* Adds the border radius */
+  cursor: pointer;
+}
+
+#submit-password-btn:hover {
+  background-color: lightcyan; /* Darker color on hover */
+}
+button {
+  /*user-select: none;
+  touch-action: manipulation; /* Optimize for touch interaction */
+  display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0; /* Space between buttons */
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input, button {
+  font-size: 16px;
+}
+@media (max-width: 480px) {
+    #quiz-password {
+        width: 95%;
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-sizing: border-box; /* Ensure padding is included in the width calculation */
+      }
+      
+      #num-questions {
+        width: 100%; /* Ensure full width on small screens */
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        border: 1px solid black;
+        border-radius: 5px;
+        box-sizing: border-box; /* Include padding in width */
+      }
+    #quiz-title,
+      #results-title {
+        font-size: 20px; /* Slightly smaller titles for mobile */
+      }
+  .quiz-container {
+    padding: 10px; /* Reduce padding for smaller screens */
+    width: 100%; /* Change to a percentage for better scaling on smaller screens */
+    max-width: 600px; /* Set a max-width to avoid it becoming too large on larger screens */
+    background-color: moccasin;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* Adjust padding for smaller screens */
+    margin: 15px; /* Ensure there's space between the container and screen edges */
+}
+  #submit-password-btn {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: lightblue;
+      color: black;
+      border-radius: 5px;
+      border: 1px solid black;
+    }
+  #student-info {
+     flex-direction: column; /* Stack name and surname fields vertically on small screens */
+   }
+
+   #student-name,
+   #student-surname {
+     width: 100%; /* Full-width for inputs on mobile */
+     margin-bottom: 10px; /* Add space between the two fields */
+   }
+  
+  .btn {
+    padding: 8px; /* Adjust button padding */
+    font-size: 14px; /* Slightly smaller font for buttons */
+  }
+
+  #progress-bar {
+    height: 3px; /* Make the progress bar thinner on small screens */
+  }
+
+  #score-container {
+    max-height: 400px; /* Reduce the max height of the score container */
+  }
+}
+#num-questions {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.correct {
+  background-color: lightgreen;
+  color: black;
+  border-radius: 5px;
+}
