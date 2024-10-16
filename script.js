@@ -3263,33 +3263,30 @@ function setNextQuestion() {
     progressText.innerText = `Question ${currentQuestionIndex + 1} of ${shuffledQuestions.length} (${progressPercentage.toFixed(0)}%)`;
 }
 
-// Add this function to highlight the correct answer before the user selects
-function highlightCorrectAnswer() {
-  const currentQuestion = questions[currentQuestionIndex];
-  currentQuestion.answers.forEach((answer, index) => {
-    const answerButton = answerButtonsElement.children[index]; // Find the button associated with the answer
-    if (answer.correct) {
-      answerButton.classList.add('correct'); // Add the 'correct' class to highlight it
-    }
-  });
-}
-
 function showQuestion(question) {
-    resetState();
-      questionElement.innerText = question.question;
+  selectedAnswerText = null; // Reset selected answer for the new question
+  correctAnswerText = getCorrectAnswer(question); // Store the correct answer for the current question
+
+  questionElement.innerHTML = `${question.question}`;
+
+  // Shuffle the answers before displaying them
+  const shuffledAnswers = shuffleArray(question.answers);
+
+  shuffledAnswers.forEach(answer => {
+    const button = document.createElement('button');
+    button.innerText = answer.text;
+    button.classList.add('btn');
       
-      question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
-        if (answer.correct) {
-          button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
-      });
+      if (answer.correct) {
+                  button.classList.add('correct');  // Highlight correct answer in green
+              }
       
-      highlightCorrectAnswer(); // Call the function to highlight the correct ans
+    if (answer.correct) {
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener('click', selectAnswer);
+    answerButtonsElement.appendChild(button);
+  });
 }
 
 function resetState() {
@@ -3301,32 +3298,36 @@ function resetState() {
 }
 
 function selectAnswer(e) {
-    const selectedButton = e.target;
-      const correct = selectedButton.dataset.correct;
+  const selectedButton = e.target;
 
-      // Mark only the selected answer (correct or wrong)
-      setStatusClass(selectedButton, correct);
+  // Store the last selected answer
+  selectedAnswerText = selectedButton.innerText;
 
-      // Highlight all buttons with correct status, but don't show wrong background when the correct answer is selected
-      if (!correct) {
-        Array.from(answerButtonsElement.children).forEach(button => {
-          if (!button.dataset.correct) {
-            setStatusClass(button, button.dataset.correct); // Apply red only to wrong answers
-          }
-        });
+  // Disable all buttons after one is clicked
+  Array.from(answerButtonsElement.children).forEach(button => {
+    button.disabled = true; // Disable all buttons
+  });
+
+  // Check if the selected answer is correct
+  const isCorrect = selectedButton.dataset.correct === 'true';
+
+  if (isCorrect) {
+    // Set the selected button's background to green for correct answer
+    selectedButton.style.backgroundColor = 'lightgreen';
+  } else {
+    // Set the selected button's background to red for incorrect answer
+    selectedButton.style.backgroundColor = 'lightcoral';
+
+    // Highlight the correct answer in green
+    Array.from(answerButtonsElement.children).forEach(button => {
+      if (button.dataset.correct === 'true') {
+        button.style.backgroundColor = 'lightgreen';
       }
+    });
+  }
 
-      // If the selected answer is correct, go to the next question automatically
-      if (correct) {
-        setTimeout(() => {
-          currentQuestionIndex++;
-          if (currentQuestionIndex < questions.length) {
-            showQuestion(questions[currentQuestionIndex]);
-          } else {
-            showScore(); // Show the score if there are no more questions
-          }
-        }, 100); // Delay of 1 second before moving to the next question
-      }
+  // Show the "Next" button after an answer is selected
+  nextButton.classList.remove('hide');
 }
 
 function storeAnswer() {
@@ -3347,22 +3348,20 @@ function getCorrectAnswer(question) {
   return correctAnswer.text;
 }
 
-// Function to set the status (correct/wrong) on buttons
 function setStatusClass(element, correct) {
-    clearStatusClass(element);
-      if (correct) {
-        element.classList.add('correct'); // Only apply green background for correct answers
-      } else {
-        element.classList.add('wrong'); // Apply red background for wrong answers
-      }
+  clearStatusClass(element);
+  if (correct) {
+    element.classList.add('correct');
+  } else {
+    element.classList.add('wrong');
+  }
 }
-// Function to clear previous status
+
 function clearStatusClass(element) {
-    element.classList.remove('correct');
-      element.classList.remove('wrong');
+  element.classList.remove('correct');
+  element.classList.remove('wrong');
 }
-// Disable the next button completely by hiding it
-nextButton.classList.add('hide'); // Add this line to hide the "Next" button
+
 /*function startTimer(seconds) {
   timerElement.innerText = seconds;
   timerInterval = setInterval(() => {
