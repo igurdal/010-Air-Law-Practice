@@ -3187,7 +3187,141 @@ const questions = [
       { text: "Clearway.", correct: false },
       { text: "Obstacle free zone (OFZ).", correct: false }
     ]
-  }
+  },{
+  question: "Aeronautical Information Service: Name the acronym signifying the system aimed at advance notification based on common effective dates, of circumstances that necessitate significant changes in operating practices.",
+  answers: [
+    { text: "NOTAM RAC", correct: false },
+    { text: "ATS NOTAM", correct: false },
+    { text: "AIRAC", correct: true },
+    { text: "Advisory NOTAM", correct: false }
+  ]
+},
+{
+  question: "AIP: Which part contains a brief description of areas and/or routes for which meteorological service is provided?",
+  answers: [
+    { text: "METEO", correct: false },
+    { text: "AD", correct: false },
+    { text: "GEN", correct: true },
+    { text: "ENR", correct: false }
+  ]
+},
+{
+  question: "AIP: Which part of the AIP contains a brief description of the service(s) responsible for search and rescue?",
+  answers: [
+    { text: "ENR", correct: false },
+    { text: "AD", correct: false },
+    { text: "SAR", correct: false },
+    { text: "GEN", correct: true }
+  ]
+},
+{
+  question: "AIP: Which part of the AIP contains information about holding, approach, and departure procedures?",
+  answers: [
+    { text: "ENR", correct: true },
+    { text: "MAP", correct: false },
+    { text: "AD", correct: false },
+    { text: "GEN", correct: false }
+  ]
+},
+{
+  question: "AIP: Which part of the AIP gives detailed information about refuelling facilities and the fuel grades available?",
+  answers: [
+    { text: "AD", correct: true },
+    { text: "FAL", correct: false },
+    { text: "GEN", correct: false },
+    { text: "ENR", correct: false }
+  ]
+},
+{
+  question: "Altimeter setting (change during climb): On flights in accordance with IFR, the change of the altimeter setting from QNH to Standard shall be made at the:",
+  answers: [
+    { text: "transition level.", correct: false },
+    { text: "level specified by ATC.", correct: false },
+    { text: "transition layer.", correct: false },
+    { text: "transition altitude.", correct: true }
+  ]
+},
+{
+  question: "Altimeter setting procedures – Definitions: The Transition Level;",
+  answers: [
+    { text: "shall be the highest available flight level below the transition altitude that has been established.", correct: false },
+    { text: "is published for the aerodrome in Section ENR of the AIP.", correct: false },
+    { text: "shall be the lowest flight level available for use above the transition altitude.", correct: true },
+    { text: "is calculated and declared for an approach by the Pilot-in-command.", correct: false }
+  ]
+},
+{
+  question: "Altimeter setting procedures - Transition Altitude: The transition altitude of an aerodrome shall be as low as possible but normally not less than:",
+  answers: [
+    { text: "1500 ft.", correct: false },
+    { text: "2500 ft.", correct: false },
+    { text: "3000 ft.", correct: true },
+    { text: "1000 ft.", correct: false }
+  ]
+},
+{
+  question: "Altimeter setting procedures - Transition Altitude/Level: In the vicinity of an aerodrome of intended landing or used for take-off, the vertical position of aircraft shall be expressed in term of:",
+  answers: [
+    { text: "altitude above mean sea level at or below the transition altitude.", correct: true },
+    { text: "flight level at or below the transition level.", correct: false },
+    { text: "altitude above mean sea level at or above the transition altitude.", correct: false },
+    { text: "flight level at or below the transition altitude.", correct: false }
+  ]
+},
+{
+  question: "Altimeter setting procedures - Transition Layer: Unless instructed otherwise by an air traffic controller, when passing through the transition layer, a pilot shall report the vertical position of the aircraft as:",
+  answers: [
+    { text: "either altitude or flight level in climb.", correct: false },
+    { text: "altitude in climb.", correct: false },
+    { text: "flight level in a descent.", correct: false },
+    { text: "altitude in a descent.", correct: true }
+  ]
+},
+{
+  question: "Altimeter setting procedures - Transition Layer: When flying through the transition layer the vertical position of the aircraft should be expressed as:",
+  answers: [
+    { text: "either altitude or flight level during climb.", correct: false },
+    { text: "flight level during descent.", correct: false },
+    { text: "altitude during climb.", correct: false },
+    { text: "altitude during descent.", correct: true }
+  ]
+},
+{
+  question: "Altimeter setting procedures - Transition Level: The transition level;",
+  answers: [
+    { text: "is calculated by the Pilot-in-command.", correct: false },
+    { text: "will be passed to aircraft by ATS units.", correct: true },
+    { text: "is published and updated in the NOTAM.", correct: false },
+    { text: "is published on the approach and landing chart for each aerodrome.", correct: false }
+  ]
+},
+{
+  question: "An air traffic control unit may ask an aircraft to temporarily change its call sign for safety reasons when there is a risk of confusion between two or more similar call signs.",
+  answers: [
+    { text: "may ask an aircraft to temporarily change its call sign for safety reasons when there is a risk of confusion between two or more similar call signs.", correct: true },
+    { text: "may require to change the call sign for safety reasons when there is a risk of confusion between two or more similar call signs providing the aircraft is on a repetitive flight plan.", correct: false },
+    { text: "may not ask an aircraft to change its call sign after accepting the flight plan.", correct: false },
+    { text: "must not ask an aircraft to change its call sign.", correct: false }
+  ]
+},
+{
+  question: "An AIRAC is an acronym for a system aimed at advance notification based on common effective dates, of circumstances necessitating significant changes in operating procedures.",
+  answers: [
+    { text: "a package which consists of the following elements; AIP, supplements to the AIP, NOTAM, AIC, checklists and summaries.", correct: false },
+    { text: "a publication issued by or with the authority of a state containing aeronautical information of a lasting character essential to air navigation.", correct: false },
+    { text: "a notice distributed by means of telecommunication containing information concerning the establishment, condition or change in any aeronautical facility service, procedure or hazard, the timely knowledge of which is essential to personnel concerned with flight operations.", correct: false },
+    { text: "an acronym for a system aimed at advance notification based on common effective dates, of circumstances necessitating significant changes in operating procedures.", correct: true }
+  ]
+},
+{
+  question: "An aircraft manoeuvring in an airport’s circuit receives a series of red flashes from the control tower. This signifies that the aircraft must:",
+  answers: [
+    { text: "give way to another aircraft.", correct: false },
+    { text: "return to land and that clearance to land will be communicated in due course.", correct: false },
+    { text: "not land for the moment regardless of previous instructions.", correct: false },
+    { text: "not land because the airport is not available for landing.", correct: true }
+  ]
+}
 ];
 
 startButton.addEventListener('click', startQuiz);
