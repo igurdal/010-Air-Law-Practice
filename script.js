@@ -2198,8 +2198,8 @@ const questions = [
       {
         question: "If radio contact with the intercepting aircraft is established but communication on a common language is not possible, which phrase should be pronounced by the intercepted aircraft to communicate that he is unable to comply with the instructions received?",
         answers: [
-          { text: "CAN NOT", correct: true },
-          { text: "UNABLE TO COMPLY", correct: false },
+          { text: "CAN NOT", correct: false },
+          { text: "UNABLE TO COMPLY", correct: true },
           { text: "CAN NOT COMPLY", correct: false },
           { text: "NOT POSSIBLE", correct: false }
         ]
