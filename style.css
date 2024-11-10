@@ -291,3 +291,25 @@ input, button {
   background-color: darkmagenta; /* Optional: Darken the magenta on hover */
   color: white; /* Optional: Change text color to white on hover */
 }
+#range-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#range-container label {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+#start-question, #end-question {
+  width: 45%;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.correct {
+  background-color: lightgreen;
+  color: black;
+}

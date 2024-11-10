@@ -12,10 +12,13 @@
 </head>
 <body>
     <h2 id="quiz-title">010-Air Law</h2>
+  
   <div class="quiz-container">
+    <!-- Toggle button for correct answer highlighting at the top of the container -->
+    <button id="toggle-highlight-btn" class="btn">Practice mode OFF</button>
+
     <div id="quiz">
       <div id="question-container" class="hide">
-          <!--  <div id="timer">Time Left: <span id="time">10</span> seconds</div>-->
           <div id="progress-container" style="width: 100%; background-color: #ddd; height: 10px; margin-top: 10px;">
             <div id="progress-bar" style="width: 0%; background-color: cyan; height: 100%;"></div>
           </div>
@@ -23,18 +26,21 @@
         <div id="question">Question text</div>
         <div id="answer-buttons" class="btn-container"></div>
       </div>
+      
       <div class="controls">
         <button id="start-btn" class="start-btn btn">010-Air Law</button>
         <div id="password-container" class="hide">
           <input type="password" id="quiz-password" placeholder="Enter password" />
-          <select id="num-questions">
-              <option value="3">3 Questions</option>
-              <option value="10">10 Questions</option>
-              <option value="25">25 Questions</option>
-              <option value="50">50 Questions</option>
-              <option value="100">100 Questions</option>
-              <option value="all">All Questions</option>
-            </select>
+          
+          <!-- Range selection for questions -->
+          <div id="range-container">
+            <label for="start-question">Start Question:</label>
+            <input type="number" id="start-question" min="1" max="546" value="1">
+            
+            <label for="end-question">End Question:</label>
+            <input type="number" id="end-question" min="1" max="546" value="546">
+          </div>
+
           <button id="submit-password-btn" class="btn">Submit Password</button>
         </div>
         <button id="next-btn" class="next-btn btn hide">Next</button>
@@ -42,7 +48,7 @@
     </div>
 
     <div id="score-container" class="hide">
-        <h2 id="results-title">RESULTS</h2> <!-- Add results heading -->
+        <h2 id="results-title">RESULTS</h2>
       <div id="student-info">
         <input type="text" id="student-name" placeholder="Enter your name" />
         <input type="text" id="student-surname" placeholder="Enter your surname" />
