@@ -366,7 +366,7 @@ const questions = [
           { text: "at the discretion of the Authority of that Member State concerned for a period not exceeding one year, provided that the basic licence remains valid.", correct: true },
           { text: "at the discretion of the Authority of the Member State concerned for a period not exceeding the period validity of basic licence.", correct: false },
           { text: "at the discretion of the Authority of that Member State concerned for a period not exceeding one year.", correct: false },
-          { text: "at the discretion of the Authority of that Member State concerned for a period not exceeding one year, provided that the basic licence remains valid.", correct: false }
+          { text: "at the discretion of the Authority of that Member State concerned for a period not exceeding two years, provided that the basic licence remains valid.", correct: false }
         ]
       },
       {
