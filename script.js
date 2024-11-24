@@ -589,9 +589,9 @@ const questions = [
       question: "Aeronautical Ground Lights on and in the vicinity of aerodromes may be turned off, provided that they can be brought back into operation before the expected arrival of an aircraft in at least;",
       answers: [
         { text: "30 minutes.", correct: false },
-        { text: "one hour.", correct: false },
+        { text: "one hour.", correct: true },
         { text: "5 minutes.", correct: false },
-        { text: "15 minutes.", correct: true }
+        { text: "15 minutes.", correct: false }
       ]
     },
     {
